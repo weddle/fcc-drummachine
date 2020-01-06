@@ -9,12 +9,20 @@ import * as actionTypes from "../../store/actionTypes";
 
 class DrumMachine extends Component {
   render() {
-    let renderedKeys = this.props.config.map((k) => (
+    let referencedKeys = this.props.config.map((k) => {
+      return {
+        ...k,
+        mediaRef: React.createRef()
+      };
+    });
+
+    let renderedKeys = referencedKeys.map((k) => (
       <DrumPad
         id={k.id}
         letter={k.letter}
         audioFile={k.audioFile}
         setDisplay={() => this.props.updateDisplay(k.description)}
+        mediaRef={k.mediaRef}
       />
     ));
     return (
