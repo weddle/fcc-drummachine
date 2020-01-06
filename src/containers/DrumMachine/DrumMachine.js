@@ -28,7 +28,7 @@ class DrumMachine extends Component {
       />
     ));
     return (
-      <div id="drum-machine">
+      <div id="drum-machine" div className={classes.DrumMachine}>
         <div className={classes.GridContainer}>{renderedKeys}</div>
         <br />
         <Display display={this.props.display} />

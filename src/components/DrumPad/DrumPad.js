@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "./DrumPad.css";
+import classes from "./DrumPad.module.css";
 
 class DrumPad extends Component {
   componentDidMount() {
@@ -29,7 +29,11 @@ class DrumPad extends Component {
 
   render() {
     return (
-      <div className="drum-pad" id={this.props.id} onClick={this.clickHandler}>
+      <div
+        className={"drum-pad " + classes.DrumPad}
+        id={this.props.id}
+        onClick={this.clickHandler}
+      >
         <p>{this.props.letter}</p>
         <audio
           ref={this.props.mediaRef}
