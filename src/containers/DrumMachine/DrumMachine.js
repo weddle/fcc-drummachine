@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import DrumPad from "../../components/DrumPad/DrumPad";
 import Display from "../../components/Display/Display";
@@ -14,10 +15,16 @@ class DrumMachine extends Component {
       <div id="drum-machine">
         <div className={classes.GridContainer}>{renderedKeys}</div>
         <br />
-        <Display display="DISPLAY" />
+        <Display display={this.props.display} />
       </div>
     );
   }
 }
 
-export default DrumMachine;
+const mapStateToProps = (state) => {
+  return {
+    display: state.display
+  };
+};
+
+export default connect(mapStateToProps)(DrumMachine);
