@@ -10,6 +10,9 @@ class DrumPad extends Component {
   clickHandler = (event) => {
     console.log(event);
     //console.log(this.mediaRef.current);
+
+    // if a setDisplay handler is passed, set the display
+    this.props.setDisplay && this.props.setDisplay();
     this.mediaRef.current.play();
   };
   render() {
