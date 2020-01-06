@@ -18,9 +18,11 @@ class DrumMachine extends Component {
 
     let renderedKeys = referencedKeys.map((k) => (
       <DrumPad
+        key={k.id}
         id={k.id}
         letter={k.letter}
         audioFile={k.audioFile}
+        keyCode={k.keyCode}
         setDisplay={() => this.props.updateDisplay(k.description)}
         mediaRef={k.mediaRef}
       />

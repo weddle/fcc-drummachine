@@ -19,15 +19,3 @@ Fulfill the below user stories and get all of the tests to pass. Give it your ow
 6. When I press the trigger key associated with each .drum-pad, the audio clip contained in its child audio element should be triggered (e.g. pressing the Q key should trigger the drum pad which contains the string "Q", pressing the W key should trigger the drum pad which contains the string "W", etc.).
 
 7. When a .drum-pad is triggered, a string describing the associated audio clip is displayed as the inner text of the #display element (each string must be unique).
-
-## Plan
-
-- Create react components and containers to visually lay out drum-machine
-- Add HTML5 playback local to drumpad elements
-- Move state into redux store
-- Define reducers and actions
-- Add keyboard listener to dispatch keyboard actions
-
-Questions - do we force all state up into redux store for drumpad press and playback, or do we pass do keypress actions through another means?
-
-Evaluate react-event-injector for passive listeners for keypress
