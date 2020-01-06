@@ -5,11 +5,9 @@ import Display from "../../components/Display/Display";
 
 import classes from "./DrumMachine.module.css";
 
-import drumConfig from "./DrumConfig";
-
 class DrumMachine extends Component {
   render() {
-    let renderedKeys = drumConfig.map((k) => (
+    let renderedKeys = this.props.config.map((k) => (
       <DrumPad id={k.id} letter={k.letter} audioFile={k.audioFile} />
     ));
     return (
